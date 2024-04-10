@@ -11,11 +11,11 @@ class FirebaseServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../config/firebase.php' => config_path('firebase.php'),
+            __DIR__ . '/../../config/firebase.php' => config_path('firebase.php'),
         ], 'config');
 
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/firebase.php', 'firebase'
+            __DIR__ . '/../../config/firebase.php', 'firebase'
         );
     }
 
