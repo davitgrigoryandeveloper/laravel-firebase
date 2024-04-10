@@ -14,13 +14,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Esterox\\LaravelFirebaseSendNotification\\": "src/"
+            "Esterox\\FirebaseSendNotification\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Esterox\\LaravelFirebaseSendNotification\\LaravelFirebaseServiceProvider"
+                "Esterox\\FirebaseSendNotification\\FirebaseServiceProvider"
             ]
         }
     }

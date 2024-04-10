@@ -1,11 +1,11 @@
 <?php
 
-namespace Esterox\LaravelFirebaseSendNotification;
+namespace Esterox\FirebaseSendNotification;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 
-class LaravelFirebaseServiceProvider extends ServiceProvider
+class FirebaseServiceProvider extends ServiceProvider
 {
 
     public function boot(): void

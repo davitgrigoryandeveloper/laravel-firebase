@@ -1,6 +1,6 @@
 <?php
 
-namespace Esterox\LaravelFirebaseSendNotification;
+namespace Esterox\FirebaseSendNotification;
 
 use Illuminate\Support\Facades\Config;
 
