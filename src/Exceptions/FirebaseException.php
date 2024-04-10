@@ -1,5 +1,5 @@
 <?php
-// FirebaseException.php
+
 namespace Esterox\FirebaseSendNotification\Exceptions;
 
 use Exception;

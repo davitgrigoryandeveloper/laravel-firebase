@@ -3,7 +3,6 @@
 namespace Esterox\FirebaseSendNotification\Services;
 
 use Esterox\FirebaseSendNotification\Contracts\FirebaseServiceInterface;
-use Esterox\FirebaseSendNotification\Services\FirebaseHttpClient;
 
 class FirebaseService implements FirebaseServiceInterface
 {

@@ -1,5 +1,5 @@
 <?php
-// FirebaseServiceProvider.php
+
 namespace Esterox\FirebaseSendNotification\ServiceProvider;
 
 use Illuminate\Support\ServiceProvider;

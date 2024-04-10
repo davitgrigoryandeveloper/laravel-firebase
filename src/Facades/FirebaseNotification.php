@@ -1,5 +1,5 @@
 <?php
-// FirebaseNotification.php
+
 namespace Esterox\FirebaseSendNotification\Facades;
 
 use Illuminate\Support\Facades\Facade;
