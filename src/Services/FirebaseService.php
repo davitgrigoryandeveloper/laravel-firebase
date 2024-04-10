@@ -1,17 +1,13 @@
 <?php
+// FirebaseService.php
+namespace Esterox\FirebaseSendNotification\Services;
 
-namespace Esterox\FirebaseSendNotification;
-
+use Esterox\FirebaseSendNotification\Contracts\FirebaseServiceInterface;
 use Illuminate\Support\Facades\Config;
+use Esterox\FirebaseSendNotification\Utils\HttpClient;
 
-class SendNotification
+class FirebaseService implements FirebaseServiceInterface
 {
-
-    /**
-     * @param array $data
-     * @param array $firebaseTokens
-     * @return bool
-     */
     public function send(array $data, array $firebaseTokens): bool
     {
         if (!isset($data['registration_ids']) && !isset($data['to'])) {

@@ -20,7 +20,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Esterox\\FirebaseSendNotification\\FirebaseServiceProvider"
+                "Esterox\\FirebaseSendNotification\\ServiceProvider\\FirebaseServiceProvider"
             ]
         }
     }
