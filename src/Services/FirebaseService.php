@@ -7,7 +7,7 @@ use Esterox\FirebaseSendNotification\Services\FirebaseHttpClient;
 
 class FirebaseService implements FirebaseServiceInterface
 {
-    protected $httpClient;
+    protected FirebaseHttpClient $httpClient;
 
     public function __construct(FirebaseHttpClient $httpClient)
     {
@@ -21,13 +21,20 @@ class FirebaseService implements FirebaseServiceInterface
         }
 
         $headers = [
-            'Authorization: key=' . config('firebase.firebase_server_key'),
+            'Authorization: key=' . $this->getFirebaseServerKey(),
             'Content-Type: application/json',
         ];
 
+        // Send request
         $url = 'https://fcm.googleapis.com/fcm/send';
         $response = $this->httpClient->sendRequest($url, $headers, $data);
 
+        // Ensure error handling
         return $response !== false;
+    }
+
+    protected function getFirebaseServerKey(): string
+    {
+        return config('firebase.firebase_server_key');
     }
 }
