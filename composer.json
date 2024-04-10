@@ -16,5 +16,12 @@
         "psr-4": {
             "Esterox\\LaravelFirebaseSendNotification\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Esterox\\LaravelFirebaseSendNotification\\LaravelFirebaseServiceProvider"
+            ]
+        }
     }
 }
