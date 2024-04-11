@@ -13,7 +13,7 @@ class FirebaseService implements FirebaseServiceInterface
         $this->httpClient = $httpClient;
     }
 
-    public function send(array $data, array $firebaseTokens): bool
+    public function sendNotification(array $data, array $firebaseTokens): bool
     {
         if (!isset($data['registration_ids']) && !isset($data['to'])) {
             $data['registration_ids'] = $firebaseTokens;
