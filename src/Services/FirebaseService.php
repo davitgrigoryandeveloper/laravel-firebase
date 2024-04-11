@@ -1,8 +1,8 @@
 <?php
 
-namespace Esterox\FirebaseSendNotification\Services;
+namespace Esterox\Firebase\Services;
 
-use Esterox\FirebaseSendNotification\Contracts\FirebaseServiceInterface;
+use Esterox\Firebase\Contracts\FirebaseServiceInterface;
 
 class FirebaseService implements FirebaseServiceInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Esterox\FirebaseSendNotification\Contracts;
+namespace Esterox\Firebase\Contracts;
 
 interface FirebaseServiceInterface
 {

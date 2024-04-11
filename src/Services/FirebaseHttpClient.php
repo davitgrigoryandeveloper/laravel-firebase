@@ -1,6 +1,6 @@
 <?php
 
-namespace Esterox\FirebaseSendNotification\Services;
+namespace Esterox\Firebase\Services;
 
 class FirebaseHttpClient
 {

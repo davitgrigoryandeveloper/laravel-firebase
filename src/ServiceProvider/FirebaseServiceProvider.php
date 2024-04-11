@@ -1,10 +1,10 @@
 <?php
 
-namespace Esterox\FirebaseSendNotification\ServiceProvider;
+namespace Esterox\Firebase\ServiceProvider;
 
 use Illuminate\Support\ServiceProvider;
-use Esterox\FirebaseSendNotification\Contracts\FirebaseServiceInterface;
-use Esterox\FirebaseSendNotification\Services\FirebaseService;
+use Esterox\Firebase\Contracts\FirebaseServiceInterface;
+use Esterox\Firebase\Services\FirebaseService;
 
 class FirebaseServiceProvider extends ServiceProvider
 {

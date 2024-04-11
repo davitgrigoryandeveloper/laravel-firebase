@@ -1,5 +1,5 @@
 {
-    "name": "esterox/laravel-firebase-send-notification",
+    "name": "esterox/laravel-firebase",
     "description": "A Laravel package for sending notifications to Firebase Cloud Messaging.",
     "type": "library",
     "authors": [
@@ -14,13 +14,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Esterox\\FirebaseSendNotification\\": "src/"
+            "Esterox\\Firebase\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Esterox\\FirebaseSendNotification\\ServiceProvider\\FirebaseServiceProvider"
+                "Esterox\\Firebase\\ServiceProvider\\FirebaseServiceProvider"
             ]
         }
     }

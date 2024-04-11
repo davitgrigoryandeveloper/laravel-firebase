@@ -1,6 +1,6 @@
 <?php
 
-namespace Esterox\FirebaseSendNotification\Facades;
+namespace Esterox\Firebase\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

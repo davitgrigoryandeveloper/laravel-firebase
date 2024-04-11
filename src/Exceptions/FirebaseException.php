@@ -1,6 +1,6 @@
 <?php
 
-namespace Esterox\FirebaseSendNotification\Exceptions;
+namespace Esterox\Firebase\Exceptions;
 
 use Exception;
 
