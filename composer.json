@@ -1,0 +1,27 @@
+{
+    "name": "esterox/laravel-firebase",
+    "description": "A Laravel package for sending notifications to Firebase Cloud Messaging.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Esterox",
+            "email": "dawud.grigoryan@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "illuminate/support": "^v11.0.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Esterox\\Firebase\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Esterox\\Firebase\\ServiceProvider\\FirebaseServiceProvider"
+            ]
+        }
+    }
+}
