@@ -3,12 +3,13 @@
 namespace Esterox\Firebase\Services;
 
 use Esterox\Firebase\Contracts\FirebaseServiceInterface;
+use Esterox\Firebase\Contracts\HttpClientInterface;
 
 class FirebaseService implements FirebaseServiceInterface
 {
-    protected FirebaseHttpClient $httpClient;
+    protected HttpClientInterface $httpClient;
 
-    public function __construct(FirebaseHttpClient $httpClient)
+    public function __construct(HttpClientInterface $httpClient)
     {
         $this->httpClient = $httpClient;
     }

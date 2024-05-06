@@ -3,6 +3,8 @@
 namespace Esterox\Firebase\ServiceProvider;
 
 use Illuminate\Support\ServiceProvider;
+use Esterox\Firebase\Contracts\HttpClientInterface;
+use Esterox\Firebase\Services\FirebaseHttpClient;
 use Esterox\Firebase\Contracts\FirebaseServiceInterface;
 use Esterox\Firebase\Services\FirebaseService;
 
@@ -21,10 +23,16 @@ class FirebaseServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->bind('firebase-notification', function ($app) {
-            return new FirebaseService();
+        // Bind HttpClientInterface to FirebaseHttpClient
+        $this->app->bind(HttpClientInterface::class, FirebaseHttpClient::class);
+
+        // Bind FirebaseService
+        $this->app->bind(FirebaseServiceInterface::class, function ($app) {
+            $httpClient = $app->make(HttpClientInterface::class);
+            return new FirebaseService($httpClient);
         });
 
-        $this->app->alias('firebase-notification', FirebaseServiceInterface::class);
+        // Alias for FirebaseServiceInterface
+        $this->app->alias(FirebaseServiceInterface::class, 'firebase-notification');
     }
 }

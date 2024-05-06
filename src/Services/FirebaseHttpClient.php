@@ -2,9 +2,11 @@
 
 namespace Esterox\Firebase\Services;
 
-class FirebaseHttpClient
+use Esterox\Firebase\Contracts\HttpClientInterface;
+
+class FirebaseHttpClient implements HttpClientInterface
 {
-    public function sendRequest(string $url, array $headers, array $data): string
+    public function sendRequest(string $url, array $headers, array $data): bool|string
     {
         // Initialize curl resource
         $ch = curl_init();
