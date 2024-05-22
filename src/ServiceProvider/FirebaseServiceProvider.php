@@ -4,7 +4,7 @@ namespace Esterox\Firebase\ServiceProvider;
 
 use Illuminate\Support\ServiceProvider;
 use Esterox\Firebase\Contracts\HttpClientInterface;
-use Esterox\Firebase\Services\FirebaseHttpClient;
+use Esterox\Firebase\Utils\HttpClient;
 use Esterox\Firebase\Contracts\FirebaseServiceInterface;
 use Esterox\Firebase\Services\FirebaseService;
 
@@ -23,8 +23,8 @@ class FirebaseServiceProvider extends ServiceProvider
 
     public function register()
     {
-        // Bind HttpClientInterface to FirebaseHttpClient
-        $this->app->bind(HttpClientInterface::class, FirebaseHttpClient::class);
+        // Bind HttpClientInterface to HttpClient
+        $this->app->bind(HttpClientInterface::class, HttpClient::class);
 
         // Bind FirebaseService
         $this->app->bind(FirebaseServiceInterface::class, function ($app) {
