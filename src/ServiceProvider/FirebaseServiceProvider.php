@@ -10,29 +10,58 @@ use Esterox\Firebase\Services\FirebaseService;
 
 class FirebaseServiceProvider extends ServiceProvider
 {
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected bool $defer = true;
+
+    /**
+     * Bootstrap any application services.
+     */
     public function boot(): void
     {
-        $this->publishes([
-            __DIR__ . '/../../config/firebase.php' => config_path('firebase.php'),
-        ], 'config');
+        // Publish the configuration file
+        if ($this->app->environment('local')) {
+            $this->publishes([
+                __DIR__ . '/../../config/firebase.php' => config_path('firebase.php'),
+            ], 'config');
+        }
 
+        // Merge the package configuration with the application's configuration
         $this->mergeConfigFrom(
             __DIR__ . '/../../config/firebase.php', 'firebase'
         );
     }
 
-    public function register()
+    /**
+     * Register any application services.
+     */
+    public function register(): void
     {
-        // Bind HttpClientInterface to HttpClient
+        // Bind HttpClientInterface to the implementation HttpClient
         $this->app->bind(HttpClientInterface::class, HttpClient::class);
 
-        // Bind FirebaseService
+        // Bind FirebaseServiceInterface to the implementation FirebaseService
         $this->app->bind(FirebaseServiceInterface::class, function ($app) {
             $httpClient = $app->make(HttpClientInterface::class);
             return new FirebaseService($httpClient);
         });
 
-        // Alias for FirebaseServiceInterface
+        // Alias FirebaseServiceInterface for easier use
         $this->app->alias(FirebaseServiceInterface::class, 'firebase-notification');
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides(): array
+    {
+        // Return the list of services provided by this provider.
+        // This helps Laravel understand what this provider is responsible for when it's deferred.
+        return [FirebaseServiceInterface::class, HttpClientInterface::class];
     }
 }
